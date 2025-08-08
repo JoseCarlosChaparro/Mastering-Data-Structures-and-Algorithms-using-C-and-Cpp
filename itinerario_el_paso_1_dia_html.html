@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Itinerario — El Paso (ida y vuelta en 1 día)</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#ffb84d;--muted:#9aa4b2;--glass: rgba(255,255,255,0.03)}
+    body{font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: linear-gradient(180deg,#071024 0%, #071428 100%); color:#e6eef6; margin:0; padding:24px; display:flex; align-items:center; justify-content:center; min-height:100vh}
+    .container{width:100%; max-width:760px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04); border-radius:14px; padding:20px; box-shadow: 0 6px 30px rgba(2,6,23,0.6)}
+    header{display:flex; gap:16px; align-items:center}
+    .logo{width:64px; height:64px; border-radius:10px; background:linear-gradient(120deg,var(--accent), #ff7aa2); display:flex; align-items:center; justify-content:center; font-weight:700; color:#081022}
+    h1{font-size:20px; margin:0}
+    p.lead{margin:2px 0 0;color:var(--muted);font-size:13px}
+    .meta{display:flex; gap:12px; margin-top:14px; flex-wrap:wrap}
+    .pill{background:var(--glass); padding:8px 10px; border-radius:999px; font-size:13px; color:var(--muted)}
+    .itinerary{margin-top:18px; display:grid; gap:12px}
+    .step{background:rgba(255,255,255,0.02); border-radius:10px; padding:12px; display:flex; gap:12px; align-items:flex-start}
+    .time{width:92px; flex-shrink:0; font-weight:700; color:var(--accent)}
+    .details h3{margin:0;font-size:15px}
+    .details p{margin:6px 0 0; color:var(--muted); font-size:13px}
+    .actions{display:flex; gap:8px; margin-top:16px; flex-wrap:wrap}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06); padding:9px 12px; border-radius:9px; color:inherit; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:8px}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#ff7aa2); color:#081022; border:none}
+    .small{font-size:12px; color:var(--muted)}
+    footer{margin-top:14px; display:flex; justify-content:space-between; align-items:center; gap:8px}
+    .note{font-size:13px; color:var(--muted)}
+    /* Timeline styles */
+    .timeline { position: relative; margin: 20px 0; padding-left: 40px; border-left: 2px solid rgba(255,255,255,0.06); }
+    .tl-item { position: relative; margin-bottom: 20px; display:flex; gap:12px; align-items:flex-start; }
+    .tl-icon { position: absolute; left: -30px; top: 0; background: var(--accent); color: #081022; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+    .tl-content { padding: 4px 10px; }
+    .tl-time { font-weight:700; color:var(--accent); font-size:13px; }
+    .tl-title { font-size:15px; margin-top:2px; }
+    .tl-desc { font-size:13px; color:var(--muted); margin-top:6px; }
+    .wait-badge { background: rgba(255,255,255,0.04); padding:6px 8px; border-radius:8px; font-size:13px; color:var(--muted); display:inline-block; margin-left:6px; }
+    @media (max-width:520px){.time{width:76px;font-size:13px}.logo{width:52px;height:52px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div class="logo">EP</div>
+        <div>
+          <h1>Itinerario: El Paso — Ida y vuelta (1 día)</h1>
+          <p class="lead">Salida temprano → Compras, comida y outlets → Regreso por la tarde</p>
+          <div class="meta">
+            <div class="pill">📍 Distancia: ~4 horas (cada tramo)</div>
+            <div class="pill">👥 Viajan: Tú + amigos</div>
+            <div class="pill">🕒 Fecha: mañana</div>
+            <div class="pill">⛳ Cruce estimado: <strong>20–40 min</strong></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Timeline -->
+      <div class="timeline" aria-label="Itinerario timeline">
+        <div class="tl-item">
+          <div class="tl-icon">🏠</div>
+          <div class="tl-content">
+            <div class="tl-time">04:30</div>
+            <div class="tl-title">Salida de casa</div>
+            <div class="tl-desc">Ruta larga (aprox. 4 h). Considera el tiempo de cruce abajo.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">🚧</div>
+          <div class="tl-content">
+            <div class="tl-time">—</div>
+            <div class="tl-title">Cruce de frontera</div>
+            <div class="tl-desc">Estimado **20–40 minutos** (revisa CBP o PDN Uno antes de salir). <span class="wait-badge">20–40 min</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">📦</div>
+          <div class="tl-content">
+            <div class="tl-time">08:30 – 09:00</div>
+            <div class="tl-title">Casa de la tía</div>
+            <div class="tl-desc">Recoger encargos. Parada rápida antes de las compras.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">🛍</div>
+          <div class="tl-content">
+            <div class="tl-time">09:15 – 12:00</div>
+            <div class="tl-title">Compras</div>
+            <div class="tl-desc">Walmart Supercenter → Best Buy (Mesa Hills) → GameStop (Joe Battle / Zaragoza).</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">🍔</div>
+          <div class="tl-content">
+            <div class="tl-time">12:15 – 13:00</div>
+            <div class="tl-title">Almuerzo</div>
+            <div class="tl-desc">Whataburger — opción rápida cerca de rutas comerciales.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">👕</div>
+          <div class="tl-content">
+            <div class="tl-time">13:15 – 17:00</div>
+            <div class="tl-title">Tiendas de ropa</div>
+            <div class="tl-desc">Ross Dress for Less y The Outlet Shoppes at El Paso (ofertas y marcas).</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">☕</div>
+          <div class="tl-content">
+            <div class="tl-time">17:30 – 18:00</div>
+            <div class="tl-title">Café / descanso</div>
+            <div class="tl-desc">Starbucks o Dutch Bros para recargar antes del regreso.</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-time">18:00</div>
+            <div class="tl-title">Salida de regreso</div>
+            <div class="tl-desc">Llegada estimada a casa alrededor de las 22:00 (ajusta según tráfico y tiempo de cruce).</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn primary" id="open-maps" href="#" role="button">📍 Abrir ruta sugerida</a>
+        <a class="btn" id="cbp-btn" href="https://bwt.cbp.gov/" target="_blank" rel="noreferrer">🛂 Ver CBP (Border Wait Times)</a>
+        <a class="btn" id="pdn-btn" href="https://pdnuno.com/" target="_blank" rel="noreferrer">🌉 Ver PDN Uno (Puentes)</a>
+      </div>
+
+      <footer>
+        <div class="note">📝 Consejo: revisa CBP/PDN Uno 10–15 min antes de cruzar para ajustar la ruta.</div>
+        <div class="small">Generado — Itinerario compacto</div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Google Maps route (paradas en El Paso)
+    document.getElementById('open-maps').addEventListener('click', function(e){
+      e.preventDefault();
+      const mapsUrl = 'https://www.google.com/maps/dir/' +
+        'Walmart+Supercenter+10727+Gateway+Blvd+W,+El+Paso,+TX' + '/' +
+        'Best+Buy+801+S+Mesa+Hills+Dr,+El+Paso,+TX' + '/' +
+        'GameStop+1830+Joe+Battle+Blvd,+El+Paso,+TX' + '/' +
+        'Whataburger+1310+Airway+Blvd,+El+Paso,+TX' + '/' +
+        'Ross+Dress+for+Less+8889+Gateway+Blvd+W,+El+Paso,+TX' + '/' +
+        'The+Outlet+Shoppes+at+El+Paso,+7051+S+Desert+Blvd,+Canutillo,+TX' +
+        '/@31.75,-106.48,12z/';
+      window.open(mapsUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
