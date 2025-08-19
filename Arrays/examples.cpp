@@ -8,5 +8,7 @@ int main(){
         printf("%u \n", &A[i]);
     }
 
+    
+
     return 0;
 }
